@@ -1,0 +1,263 @@
+* {
+  font-family: "Monda", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: black;
+  padding: 15px 0px;
+}
+
+header img {
+  width: 50px;
+  margin-left: 20px;
+  display: none;
+}
+
+main {
+  background-color: #d1d1d1;
+}
+
+
+/* BANNER */
+
+.homeImgBanner {
+  position: relative;
+  width: 100%;
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeImgBanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.767);
+  z-index: 2;
+}
+
+.content {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+}
+
+.content button {
+  width: 80%;
+  height: 40px;
+  border: 0px;
+  border-radius: 4px;
+  background-color: #4495E1;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.content h3 {
+  font-size: 1.2em;
+  font-weight: 100;
+}
+
+
+/* ABOUT US */
+
+section {
+  margin: 0% 5%;
+}
+
+.titleSection {
+  margin: 20px 5%;
+  font-weight: bolder;
+}
+
+.aboutUsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.aboutUsSection h2 {
+  color: #4495E1;
+  font-weight: 300;
+}
+
+.aboutUsSection h3 {
+  font-weight: 100;
+}
+
+.aboutUsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* SERVICE */
+
+.serviceCard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.serviceCard img {
+  width: 100%;
+  max-height: 230px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.serviceText {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  padding: 8px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
+/* STEPS */
+
+.descriptionStep{
+  font-weight: 100;
+}
+
+.stepsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stepItem{
+  display: flex;
+  align-items: flex-start;
+}
+
+.numberStep {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin-right: 20px; /* Espacio entre el número y el contenido */
+}
+
+.contentStep{
+  width: 100%;
+}
+
+/* FORM */
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formInput{
+  height: 45px;
+  border-radius: 10px;
+  border: 0px;
+  font-size: 1.1em;
+}
+
+.formInput::placeholder{
+  padding: 10px;
+}
+
+.formButton{
+  height: 50px;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 1.3em;
+}
+
+
+@media (min-width: 768px) {
+  header img {
+    display: inline;
+  }
+
+  .content {
+    width: 80%;
+  }
+
+  .aboutUsSection {
+    flex-direction: row;
+  }
+
+  .aboutUsContainer {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1020px) {
+  section{
+    padding: 0px 8%
+  }
+
+  .titleSection{
+    padding: 10px 8%;
+  }
+  
+  .serviceCard img {
+    max-height: 280px;
+  }
+
+  .serviceText{
+    font-size: 1.4em;
+  }
+
+  /* ABOUT US */
+
+  .aboutUsContainer h2{
+    font-size: 1.6em;
+  }
+
+  .aboutUsContainer h3{
+    font-size: 1.3em;
+  }
+
+  /* STEPS */
+
+  .stepItem{
+    width: 48%;
+  }
+
+  .stepsSection{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .titleStep{
+    font-size: 1.6em;
+  }
+
+  .numberStep{
+    font-size: 2.5em;
+  }
+
+  .descriptionStep{
+    font-size: 1.3em;
+  }
+}
