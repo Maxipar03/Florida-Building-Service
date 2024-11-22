@@ -3,6 +3,7 @@ import fbsLogo from "./assets/Group-17-FBS-1.svg"
 import backgroundBanner from "./assets/imgBackground.png"
 import serviceCleaning from "./assets/ImgCleaning.png"
 import serviceDemolition from "./assets/ImgDemolition.png"
+import workerBanner from "./assets/pngtree-construction-worker-engineer-png-image_11500172.png"
 import './App.css'
 
 function App() {
@@ -15,13 +16,16 @@ function App() {
       </header>
       <main>
         <div className='homeImgBanner'>
-          <img src={backgroundBanner} alt="" />
-          <div className='overlay'></div>
           <div className='content'>
-            <h1>Are you employee or constructor?</h1>
-            <h3>Get the best market price with our specialized cleaning crew. We keep your construction site clean and safe during the build, and spotless after, ready for sale.
-            </h3>
-            <button>Schedule a meet</button>
+            <div className='contentText'>
+              <h1>Transform Your Space: <strong className='bannerStrongText'>Professional Construction Cleaning</strong> in Florida</h1>
+              <h3>Is your project complete, but the space still needs a final touch? Our expert construction cleaning team in Florida is here to turn the chaos into a spotless and safe place. Schedule a meeting to learn how we can help deliver clean, ready-to-use spaces.
+              </h3>
+              <button>Schedule a meet</button>
+            </div>
+            <div className='contentImg'>
+              <img src={workerBanner} alt="" />
+            </div>
           </div>
         </div>
         <h1 className='titleSection'>About us</h1>
@@ -86,14 +90,14 @@ function App() {
         </section>
         <h1 className='titleSection'>Get In Touch</h1>
         <section className='sectionContact'>
-        <form className='formContainer' action="">
-          <input className='formInput' placeholder='Full Name' type="text" />
-          <input className='formInput' placeholder='Email' type="text" />
-          <input className='formInput' placeholder='Phone Number' type="text" />
-          <input className='formInput' placeholder='Company' type="text" />
-          <input className='formInput' placeholder='Location' type="text" />
-          <button className='formButton'>Submit</button>
-        </form>
+          <form className='formContainer' action="">
+            <input className='formInput' placeholder='Full Name' type="text" />
+            <input className='formInput' placeholder='Email' type="text" />
+            <input className='formInput' placeholder='Phone Number' type="text" />
+            <input className='formInput' placeholder='Company' type="text" />
+            <input className='formInput' placeholder='Location' type="text" />
+            <button className='formButton'>Submit</button>
+          </form>
         </section>
       </main>
     </>
