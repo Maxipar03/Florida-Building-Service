@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import fbsLogo from "./assets/Group-17-FBS-1.svg"
-import backgroundBanner from "./assets/imgBackground.png"
 import serviceCleaning from "./assets/ImgCleaning.png"
 import serviceDemolition from "./assets/ImgDemolition.png"
 import workerBanner from "./assets/pngtree-construction-worker-engineer-png-image_11500172.png"
-import './App.css'
 
 function App() {
+
+  const apiKey = import.meta.env.VITE_IDFORM
 
   return (
     <>
@@ -90,12 +90,12 @@ function App() {
         </section>
         <h1 className='titleSection'>Get In Touch</h1>
         <section className='sectionContact'>
-          <form className='formContainer' action="">
-            <input className='formInput' placeholder='Full Name' type="text" />
-            <input className='formInput' placeholder='Email' type="text" />
-            <input className='formInput' placeholder='Phone Number' type="text" />
-            <input className='formInput' placeholder='Company' type="text" />
-            <input className='formInput' placeholder='Location' type="text" />
+          <form className='formContainer' action={`https://formspree.io/f/${apiKey}`}  method="POST">
+            <input className='formInput' name='NameInput' placeholder='Full Name' type="text" required/>
+            <input className='formInput' name='EmailInput' placeholder='Email' type="text" required/>
+            <input className='formInput' name='PhoneInput' placeholder='Phone Number' type="text" required/>
+            <input className='formInput' name='CompanyInput' placeholder='Company' type="text" required/>
+            <input className='formInput' name='LocationInput' placeholder='Location' type="text" required/>
             <button className='formButton'>Submit</button>
           </form>
         </section>
