@@ -6,23 +6,93 @@
 
 header {
   display: flex;
-  justify-content: center;
-  height: 65px;
-  color: white;
-  background-color: black;
-  align-items: center;
+      justify-content: space-between;
+      height: 65px;
+      color: white;
+      background-color: rgb(32, 32, 32);
+      position: sticky;
+      top: 0px;
+      z-index: 10000;
+      align-items: center;
+      padding: 0% 5%;
+}
+
+header h1{
+  font-size: 1.3em;
 }
 
 header img {
-  width: 50px;
-  margin-left: 20px;
+  width: 30px;
   display: none;
+}
+
+.headerLogoContainer{
+  display: flex;
+  gap: 10px;
 }
 
 main {
   background-color: #d1d1d1;
+  transition: transform 0.3s ease-in-out;
 }
 
+.menu-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(32, 32, 32);
+  color: #fff;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.burger-menu.open .menu-content {
+  transform: translateX(0);
+}
+
+.burgerContentText{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burgerContentText h3, i{
+  font-size: 1.5em;
+}
+
+.burgerContentText i:hover{
+  color: red;
+  cursor: pointer;
+}
+
+.social-links{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-links li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.9em;
+  display: flex;
+  align-items: center;
+}
+
+.social-links li a i{
+  font-size: 1.2em;
+}
+
+#socialIcon{
+  padding-right: 15px;
+}
 
 /* BANNER */
 
@@ -36,6 +106,16 @@ main {
   z-index: 1;
   justify-content: center;
   align-items: center;
+  background-image: url("./assets/depositphotos_661323888-stock-photo-new-empty-room-construction-plaster.webp");
+  z-index: 0;
+}
+
+.layout{
+  position: absolute;
+  z-index: 1;
+  background-color: hsla(0, 0%, 87%, 0.850);
+  width: 100%;
+  height: 100%;
 }
 
 .contentImg img {
@@ -51,7 +131,7 @@ main {
   align-items: center;
   text-align: center;
   width: 100%;
-  margin: 0px 5%;
+  padding: 0px 5%;
 }
 
 .contentText {
@@ -81,15 +161,19 @@ main {
   font-weight: 100;
 }
 
+.contentText h1, h3{
+  text-align: left;
+}
 
 /* ABOUT US */
 
 section {
-  margin: 0% 5%;
+  padding: 0% 5%;
 }
 
 .titleSection {
-  margin: 20px 5%;
+  padding: 0% 5%;
+  margin: 30px 0px;
   font-weight: bolder;
 }
 
@@ -122,25 +206,51 @@ section {
   position: relative;
 }
 
-.serviceCard img {
+.sectionImgBackround{
   width: 100%;
-  max-height: 230px;
+  height: 180px;
   border-radius: 10px;
   object-fit: cover;
 }
 
-.serviceText {
+
+.serviceTextContainer{
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  align-items: center;
+  left: 15px;
+  display: flex;
+  padding:5px 20px;
+  border-radius: 50px;
+  color: black;
+  background-color: rgb(233, 233, 233);
+}
+
+
+.serviceTextContainer img{
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.serviceText {
+  bottom: 7px;
   border-radius: 5px;
   font-size: 1.2em;
-  padding: 8px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.61);
 }
 
 /* STEPS */
+
+.numberStepContainer{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.numberStepContainer i{
+font-size: 2.5em;
+}
 
 .descriptionStep {
   font-weight: 100;
@@ -154,7 +264,13 @@ section {
 
 .stepItem {
   display: flex;
+  padding: 20px;
+  flex-direction: column;
   align-items: flex-start;
+  background-size: cover;
+  border-radius: 5px;
+  background-image: url("./assets/130042397-grungy-cement-wall-texture-in-black-and-white-abstract-background-and-pattern-for-design.webp");
+  background-repeat: no-repeat;
 }
 
 .numberStep {
@@ -174,18 +290,20 @@ section {
 .formContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 35px;
 }
 
 .formInput {
   height: 45px;
-  border-radius: 10px;
   border: 0px;
+  background-color: #66339900;
   font-size: 1.1em;
+  width: 100%;
+  border-bottom: 1px solid white;
 }
 
-.formInput::placeholder {
-  padding: 10px;
+.formInput:focus{
+  outline: none;
 }
 
 .formButton {
@@ -195,16 +313,90 @@ section {
   font-size: 1.3em;
 }
 
+.formMaps{
+  width: 100%;
+  height: 350px;
+  padding-bottom: 35px;
+  padding-top: 10px;
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+  border: 0px;
+}
+
+.errorText{
+  position: absolute;
+  bottom: -30px;
+  color: red;
+}
+
+.formInputContainer{
+  position: relative;
+  display: flex;
+}
+
+.formInput.inputError{
+  border-bottom: 1px solid red ;
+}
+
+/* FOOTER */
+footer{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(32, 32, 32);
+}
+
+.footerContent{
+  padding: 0% 8%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.footerContent p{
+  color: white;
+}
+
+.footerContent h3{
+  color: white;
+}
+
+.footerContent h3 a{
+  color: white;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.footerLogo{
+  width: 70px;
+}
+
 
 @media (min-width: 768px) {
   header img {
     display: inline;
   }
 
+  header{
+    padding: 0% 8%;
+  }
+
+  header h1{
+    font-size: 1.6em;
+  }
+
+  .menu-content{
+    width: 300px;
+  }
+
   .content {
     flex-direction: row;
     padding: 0px 8%;
     text-align: left;
+    justify-content: flex-start;
   }
 
   .contentText{
@@ -213,14 +405,21 @@ section {
 
   .contentImg {
     width: 40%;
+    position: absolute;
+    right: 0px;
+    filter: drop-shadow(4px -4px 20px #000000);
+    bottom: 0px;
   }
 
   .contentImg img {
     width: 100%;
-  
     display: block;
-    max-height: 467px;
     object-fit: contain;
+  }
+
+  .layout{
+    width: 80%;
+    left: 0;
   }
 
   .aboutUsSection {
@@ -229,6 +428,12 @@ section {
 
   .aboutUsContainer {
     width: 50%;
+  }
+
+  .footerContent{
+    padding: 0% 8%;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -241,8 +446,9 @@ section {
     padding: 10px 8%;
   }
 
-  .serviceCard img {
-    max-height: 280px;
+  .sectionImgBackround{
+    max-height: none;
+    height: 280px;
   }
 
   .serviceText {
@@ -255,6 +461,14 @@ section {
 
   .contentText h3{
     font-size: 1.4em;
+  }
+
+  .contentImg{
+    height: -webkit-fill-available;
+  }
+
+  .contentImg img{
+    height: 100%;
   }
 
   /* ABOUT US */
@@ -270,7 +484,7 @@ section {
   /* STEPS */
 
   .stepItem {
-    width: 48%;
+    flex: 1 1 calc(27% - 20px);
   }
 
   .stepsSection {
@@ -289,5 +503,19 @@ section {
 
   .descriptionStep {
     font-size: 1.3em;
+  }
+
+  /* CONTACT */
+
+  .sectionContact{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .formContainer,
+  .formMaps {
+    width: 49%;
+    height: auto;
+    padding-bottom: 60px;
   }
 }
