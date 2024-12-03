@@ -145,15 +145,20 @@ main {
   color: #4495E1;
 }
 
-.content button {
+.content a {
   width: 100%;
   height: 50px;
+  display: flex;
   border: 0px;
   border-radius: 4px;
   background-color: #4495E1;
   font-size: 1.3em;
   font-weight: bold;
   cursor: pointer;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .content h3 {
